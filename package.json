@@ -1,0 +1,17 @@
+{
+  "name": "chunk-store-multi-get",
+  "version": "0.0.0",
+  "description": "Get multiple chunks off a chunk-store",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": "juliangruber/chunk-store-multi-get",
+  "devDependencies": {
+    "memory-chunk-store": "^1.2.0",
+    "tape": "^4.2.1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "once": "^1.3.2"
+  }
+}

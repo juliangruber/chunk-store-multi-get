@@ -9,7 +9,7 @@ function get(store, opts, cb){
   assert(typeof opts.chunkLength != 'undefined', '.chunkLength required');
 
   cb = once(cb);
-  var out = new Buffer(opts.length);
+  var bufs = [];
   var chunks = Math.ceil(opts.length / opts.chunkLength);
   var todo = Number(chunks);
 
@@ -19,8 +19,8 @@ function get(store, opts, cb){
 
     store.get(opts.index + i, _opts, function(err, buf){
       if (err) return cb(err);
-      buf.copy(out, i * opts.chunkLength);
-      if (!--todo) cb(null, out);
+      bufs[i] = buf;
+      if (!--todo) cb(null, Buffer.concat(bufs, opts.length));
     });
   })(i);
 };

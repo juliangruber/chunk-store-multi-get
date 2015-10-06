@@ -1,7 +1,7 @@
 
 # chunk-store-multi-get
 
-  Get multiple chunks off a chunk-store, in parallel.
+  Get multiple chunks off a [chunk-store](https://npmjs.org/package/abstract-chunk-store), in parallel.
 
 ## Example
 

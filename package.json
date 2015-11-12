@@ -1,6 +1,6 @@
 {
   "name": "chunk-store-multi-get",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Get multiple chunks off a chunk-store",
   "scripts": {
     "test": "make test"

@@ -57,3 +57,34 @@ test('cut off chunks', function(t){
     });
   });
 });
+
+test('offset', function(t){
+  var chunks = mem(10);
+  chunks.put(0, Buffer('0123456789'), function(err){
+    t.error(err);
+    chunks.put(1, Buffer('0123456789'), function(err){
+      t.error(err);
+
+      get(chunks, {
+        index: 0,
+        offset: 5,
+        length: 15,
+        chunkLength: 10
+      }, function(err, buf){
+        t.error(err);
+        t.equal(buf.toString(), '567890123456789');
+
+        t.throws(function(){
+          get(chunks, {
+            index: 0,
+            offset: 10,
+            length: 10,
+            chunkLength: 10
+          }, function(){});
+        });
+        t.end();
+      });
+    });
+  });
+
+});

@@ -43,11 +43,12 @@ $ npm install chunk-store-multi-get
 
   Get chunks off `store` and call `cb` with the potential error and the result buffer.
 
-  Required options are:
+  Options are:
 
-  - `chunkLength`: the chunk length of the store
-  - `index`: the index to start at
-  - `length`: the total length to read
+  - `chunkLength`: the chunk length of the store (required)
+  - `index`: the index to start at (required)
+  - `length`: the total length to read (required)
+  - `offset`
 
 ## License
 
